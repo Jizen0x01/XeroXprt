@@ -3,7 +3,7 @@
 
 ![XeroXprt Logo](screenshots/screenshot.png)
 
-XeroXprt is a utility tool designed to assist users with fixing common errors encountered while opening Xero, a game. It provides options to resolve client/launcher errors and optimize network settings for an enhanced gaming experience.
+XeroXprt is a utility tool designed to assist users with fixing common errors encountered while opening Xero. It provides options to resolve client/launcher errors and optimize network settings to solve network related problems and enhancing experience.
 
 ## Features
 
@@ -22,7 +22,7 @@ XeroXprt is a utility tool designed to assist users with fixing common errors en
 2. Install the required Python packages using pip:
 
 ```bash
-pip install colorama
+pip install -r requirements.txt
 ```
 
 ## Usage
@@ -71,4 +71,5 @@ XeroXprt is licensed under the [MIT License](LICENSE).
 - [@Jizen0x01](https://github.com/Jizen0x01): Developer of XeroXprt
 
 Feel free to contribute by submitting bug reports, feature requests, or pull requests.
+might convert it to C++/C#
 ```
