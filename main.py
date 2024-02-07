@@ -7,6 +7,7 @@ import subprocess
 import winreg
 import psutil
 from colorama import init, Fore
+import sys
 
 
 #all.bat https://pastebin.com/DjutjdK5
@@ -43,6 +44,13 @@ d88P   Y88b "Y8888 888     "Y88P"d88P   Y88b88888P" 888     "Y888
 
 
 """
+
+
+if not ctypes.windll.shell32.IsUserAnAdmin():
+    # Display a popup informing the user to run the script as administrator
+    ctypes.windll.user32.MessageBoxW(0, "Please run this script as administrator.", "Administrator Privileges Required", 0x10)
+    sys.exit()
+
 
 # Function to print centered text
 def print_centered(text):
@@ -84,6 +92,9 @@ popup_thread.start()
 
 # Wait for the popup and art thread to complete before displaying options
 popup_thread.join()
+
+
+
 
 # Function to display options and prompt for user input
 def display_options():
@@ -180,7 +191,7 @@ def run_batch_as_admin(batch_file):
     try:
         # Use ctypes to run the batch file as administrator
         ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", f"/c {batch_file}", None, 1)
-        print(f"[+] Running network tweaks for solving network related problems.")
+        print(f"[+] Launching Xero with DirectX 9Ex option.")
     except Exception as e:
         print(f"[-] Error running '{batch_file}' as administrator: {e}")
 
@@ -206,3 +217,4 @@ def start_game():
 
 # Start displaying options
 display_options()
+input("[-] Press any key to exit.")
